@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav1"
+    app:startDestination="@id/volonterMainActivity2">
+    <activity
+        android:id="@+id/volonterMainActivity2"
+        android:name="com.example.volunteerapp.volonter.VolonterMainActivity"
+        android:label="volonter_activity_main"
+        tools:layout="@layout/volonter_activity_main" />
+    <fragment
+        android:id="@+id/search_fragment_volonter2"
+        android:name="com.example.volunteerapp.volonter.Search_fragment_volonter"
+        android:label="fragment_search_volonter"
+        tools:layout="@layout/fragment_search_volonter" />
+    <fragment
+        android:id="@+id/person_fragment_volonter"
+        android:name="com.example.volunteerapp.volonter.Person_fragment_volonter"
+        android:label="fragment_person_volonter"
+        tools:layout="@layout/fragment_person_volonter" />
+</navigation>

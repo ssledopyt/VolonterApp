@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="division">
+        <item>Животные</item>
+        <item>Спорт</item>
+        <item>Культура</item>
+        <item>Духовные</item>
+        <item>Интелектуальные</item>
+        <item>Социальные</item>
+    </string-array>
+</resources>

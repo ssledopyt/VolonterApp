@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav1">
+    <fragment
+        android:id="@+id/search_fragment_counselor"
+        android:name="com.example.volunteerapp.counselor.Add_event_counselor"
+        android:label="fragment_home_counselor"
+        tools:layout="@layout/fragment_home_counselor" />
+    <fragment
+        android:id="@+id/home_fragment_volonter"
+        android:name="com.example.volunteerapp.counselor.Events_fragment_counselor"
+        android:label="fragment_event_counselor"
+        tools:layout="@layout/fragment_home_counselor" />
+    <fragment
+        android:id="@+id/person_fragment_counselor"
+        android:name="com.example.volunteerapp.counselor.Person_fragment_counselor"
+        android:label="fragment_person_counselor"
+        tools:layout="@layout/fragment_person_counselor" />
+</navigation>
