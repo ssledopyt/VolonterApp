@@ -1,27 +1,21 @@
 package com.example.volunteerapp.volonter;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.volunteerapp.R;
 import com.example.volunteerapp.SignInActivity;
 import com.example.volunteerapp.model.User;
 import com.example.volunteerapp.preferences.UserPreferences;
-import com.example.volunteerapp.volonter.VolonterMainActivity;
-import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -34,54 +28,50 @@ public class Person_fragment_volonter extends Fragment {
 
     private int rating;
     private ParseObject userParse;
-    private TextView fullnameView, rateView, ageView;
-    private ProgressBar barView;
-    Button toEventButton;
+
+    private ImageView profileImage;
+    private TextView fullnameView, rateView, ageView, levelView, postView;
     Button logoutButton;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_person_volonter, container, false);
-        rateView = v.findViewById(R.id.mainView_rate);
-        barView = v.findViewById(R.id.progressBar2);
+        View v = inflater.inflate(R.layout.fragment_person_counselor, container, false);
+        rateView = v.findViewById(R.id.rateView);
         UserPreferences ePref = new UserPreferences(this.getActivity());
         User user = ePref.getUser();
         ParseQuery<ParseObject> queryUser = new ParseQuery<>("_User");
         queryUser.whereEqualTo("username", user.getLogin());
         queryUser.findInBackground();
+        levelView = v.findViewById(R.id.levelView);
+        levelView.setText(user.getPost());
         try {
             userParse = queryUser.getFirst();
-/*            ParseQuery<ParseObject> pointsQuery = new ParseQuery<>("Rating");
-            pointsQuery.whereEqualTo("user", userParse);
-            pointsQuery.getFirstInBackground((object, e) -> {*/
             rating = userParse.getInt("scores");
-            barView.setMax(1000);
-            barView.setProgress(rating);
-            String rateString ="Баллов активности: " + rating;
-            rateView.setText(rateString);
+            rateView.setText(rating+"");
             if (rating<=200){
-                barView.getProgressDrawable().setColorFilter(Color.rgb(255, 155, 82), android.graphics.PorterDuff.Mode.SRC_IN);
+                levelView.setText("Деревянный");
             } else if (rating>200 && rating<=400) {
-                barView.getProgressDrawable().setColorFilter(Color.rgb(142, 85, 0), android.graphics.PorterDuff.Mode.SRC_IN);
+                levelView.setText("Бронзовый");
             } else if (rating>400 && rating<=600) {
-                barView.getProgressDrawable().setColorFilter(Color.rgb(114, 114, 114), android.graphics.PorterDuff.Mode.SRC_IN);
+                levelView.setText("Медный");
             } else if (rating>600 && rating<=800) {
-                barView.getProgressDrawable().setColorFilter(Color.rgb(255, 206, 82 ), android.graphics.PorterDuff.Mode.SRC_IN);
+                levelView.setText("Серебрянный");
             } else if (rating>800 && rating<=1000) {
-                barView.getProgressDrawable().setColorFilter(Color.rgb(111, 199, 199), android.graphics.PorterDuff.Mode.SRC_IN);
+                levelView.setText("Золотой");
             }
-
 
 //            });
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
 
+        postView = v.findViewById(R.id.postView);
+        postView.setText(user.getPost());
         String nameString = user.getLastname()+" "+user.getFirstname()+" "+user.getPatronymic();
         fullnameView = v.findViewById(R.id.fullnameView);
 
-        ageView = v.findViewById(R.id.mainView_age);
+        ageView = v.findViewById(R.id.dateView);
         fullnameView.setText(nameString);
 
         SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -103,10 +93,6 @@ public class Person_fragment_volonter extends Fragment {
             Intent intent = new Intent(this.getActivity(), SignInActivity.class);
             startActivity(intent);
         });
-        /*toEventButton.setOnClickListener(view -> {
-            Intent intent = new Intent(this.getActivity(), VolunteerEventsActivity.class);
-            startActivity(intent);
-        });*/
         return v;
     }
 }

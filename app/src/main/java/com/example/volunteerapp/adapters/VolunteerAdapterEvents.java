@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.volunteerapp.MoreAboutEventActivity;
+import com.example.volunteerapp.volonter.MoreAboutEventActivity;
 import com.example.volunteerapp.R;
 import com.example.volunteerapp.counselor.MoreAboutEventActivityCounselor;
 import com.example.volunteerapp.model.User;

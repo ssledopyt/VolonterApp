@@ -122,7 +122,7 @@
                     android:layout_width="220dp"
                     android:layout_height="55dp"
                     android:layout_marginTop="35dp"
-                    android:backgroundTint="@color/purple_200"
+                    android:backgroundTint="@color/red_700"
                     android:text="@string/sign_in"
                     android:textColor="@color/white" />
 

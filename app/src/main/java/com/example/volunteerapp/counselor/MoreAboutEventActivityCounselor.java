@@ -1,6 +1,5 @@
 package com.example.volunteerapp.counselor;
 
-import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.volunteerapp.MoreAboutEventActivity;
 import com.example.volunteerapp.R;
 import com.example.volunteerapp.model.User;
 import com.example.volunteerapp.preferences.UserPreferences;
@@ -21,7 +19,7 @@ import java.util.Date;
 
 public class MoreAboutEventActivityCounselor extends AppCompatActivity {
 
-    TextView title, venue, organizer, date, quantity;
+    TextView title, venue, organizer, date, quantity, description;
     Button applyButton, applicationButton, reportButton;
     ParseObject event;
     ProgressDialog progressDialog;
@@ -59,6 +57,9 @@ public class MoreAboutEventActivityCounselor extends AppCompatActivity {
             date.setText(format.format(event.getDate("date")));
             String quantityText = event.getInt("quantity_current") + "/" + event.getInt("quantity_max");
             quantity.setText(quantityText);
+/*            if (event.getString("description")){
+                description.setText(event.getString("description"));
+            }*/
             if(event.getDate("date").before(new Date())){
                 applyButton.setVisibility(View.GONE);
             }
@@ -68,18 +69,9 @@ public class MoreAboutEventActivityCounselor extends AppCompatActivity {
             Intent intent = new Intent(view.getContext(), Event_fragment_applications.class);
             intent.putExtra("event", event);
             view.getContext().startActivity(intent);
-            /*setContentView(R.layout.counselor_activity_main);
-            getSupportFragmentManager().beginTransaction().replace(R.id.container2, eventFragmenttreatment).commit();*/
-            /*final FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.container2, eventFragmenttreatment);
-            ft.commit();
-            getFragmentManager().executePendingTransactions();
-            ft.addToBackStack(null);*/
-            //getSupportFragmentManager().beginTransaction().replace(R.id.container2, eventFragmenttreatment).commit();
         }
         );
         reportButton.setOnClickListener(view -> {
-            //getSupportFragmentManager().beginTransaction().replace(R.id.container2, eventReport).commit();
         });
     }
 }
