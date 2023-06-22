@@ -43,20 +43,20 @@ public class Event_fragment_applications extends AppCompatActivity {
             ParseQuery<ParseObject> applicationsQuery = new ParseQuery<>("Event");
             System.out.println(event.getString("title"));
             applicationsQuery.whereEqualTo("objectId", event.getObjectId());
-            try {
+/*            try {
                 eventObj = applicationsQuery.getFirst();
                 //System.out.println(userObj.getString("username"));
 
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println(eventObj.getRelation("applications"));
+            System.out.println(eventObj.getRelation("applications"));*/
 
             applicationsQuery.findInBackground((objects, e) -> {
                 if (e == null) {
                     if (objects != null) {
 
-                        AdapterForEventTreatment adapter = new AdapterForEventTreatment(this, eventObj.getList("applications"), event.getObjectId());
+                        AdapterForEventTreatment adapter = new AdapterForEventTreatment(this, objects, event.getObjectId());
                         listview.setAdapter(adapter);
                         listview.setItemsCanFocus(false);
                     }
