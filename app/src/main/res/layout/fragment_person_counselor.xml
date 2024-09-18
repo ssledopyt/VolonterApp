@@ -38,24 +38,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ProgressBar
+<!--            <ProgressBar
                 android:id="@+id/progressBar2"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="183dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="336dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginTop="376dp"
+                android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />-->
 
             <TextView
                 android:id="@+id/textView12"
-                android:layout_width="104dp"
-                android:layout_height="34dp"
+                android:layout_width="105dp"
+                android:layout_height="23dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="304dp"
                 android:text="Мой уровень:"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,8 +83,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="276dp"
                 android:baselineAligned="false"
-                android:text="@string/date_of_birthday"
-                android:textSize="12sp"
+                android:text="Возраст:"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.069"
@@ -92,12 +92,14 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="283dp"
-                android:layout_height="153dp"
-                android:layout_marginTop="72dp"
+                android:layout_width="280dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="100dp"
                 android:translationY="40dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/profile_image"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.513"
+                app:layout_constraintHorizontal_bias="0.488"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -108,7 +110,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="336dp"
-                android:text="@string/rate"
+                android:text="Рейтиг:"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -126,6 +128,52 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rateView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="84dp"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/mainView_rate" />
+
+            <TextView
+                android:id="@+id/levelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="112dp"
+
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.833"
+                app:layout_constraintStart_toEndOf="@+id/textView12" />
+
+            <TextView
+                android:id="@+id/dateView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="144dp"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.849"
+                app:layout_constraintStart_toEndOf="@+id/mainView_age" />
+
+            <TextView
+                android:id="@+id/postView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Post"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fullnameView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -149,6 +197,7 @@
             android:layout_marginBottom="16dp"
             android:text="Выйти из акканута"
             android:textSize="16sp"
+            android:backgroundTint="@color/red_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

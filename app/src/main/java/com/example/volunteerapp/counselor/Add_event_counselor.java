@@ -78,6 +78,7 @@ public class Add_event_counselor extends Fragment {
             } else {
                 event.put("title", titleField.getText().toString());
                 event.put("description", descriptionField.getText().toString());
+                event.put("direction_id", spinnerDivision.getSelectedItem());
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                 Date date;
                 try {

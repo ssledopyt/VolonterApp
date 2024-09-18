@@ -19,19 +19,13 @@
             android:name=".volonter.VolonterMainActivity"
             android:exported="false" />
         <activity
-            android:name=".EventTreatmentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MoreAboutEventActivity"
+            android:name=".volonter.MoreAboutEventActivity"
             android:exported="false" />
         <activity
             android:name=".counselor.MoreAboutEventActivityCounselor"
             android:exported="false" />
         <activity
             android:name=".counselor.Event_fragment_applications"
-            android:exported="false" />
-        <activity
-            android:name=".VolunteerEventsActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"

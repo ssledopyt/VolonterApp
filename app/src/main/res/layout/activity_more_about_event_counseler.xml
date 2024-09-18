@@ -113,12 +113,12 @@
         android:layout_width="170dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="80dp"
         android:backgroundTint="@color/purple_200"
         android:text="Посмотреть заявки"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -192,12 +192,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageOfEvent" />
 
+<!--    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="165dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="16dp"
+        android:text="Описание"
+        android:textColor="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/descriptionView"
+        android:layout_width="384dp"
+        android:layout_height="31dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />-->
+
     <Button
         android:id="@+id/buttonReport"
         android:layout_width="170dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="76dp"
         android:backgroundTint="@color/purple_200"
         android:text="Сделать отчёт"
         android:textColor="@color/white"
